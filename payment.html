@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vhashumi Internet Café - Make Deposit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	 <style>
+        :root {
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #FF6B35;
+            --light: #EFEBE9;
+            --dark: #3E2723;
+            --success: #4CAF50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #EFEBE9 0%, #D7CCC8 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 80px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .search-container {
+            margin: 1rem 0;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .search-bar {
+            position: relative;
+            display: flex;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-bar button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .search-bar button:hover {
+            background: var(--secondary);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .payment-container {
+            background: white;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .payment-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .payment-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .payment-body {
+            padding: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 15px 15px 15px 50px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.2);
+        }
+
+        .deposit-btn {
+            background: linear-gradient(135deg, var(--accent), #FF8C42);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .deposit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .feature {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .feature i {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: var(--dark);
+            color: #EFEBE9;
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .payment-header h1 {
+                font-size: 1.8rem;
+            }
+            .payment-body {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/a.jpg" alt="Vhashumi Internet Café Logo">
+            </div>
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search services, printing, gaming..." id="searchInput">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="payment-container">
+            <div class="payment-header">
+                <h1>Make a Deposit</h1>
+                <p>Add funds to your Vhashumi account</p>
+            </div>
+            
+            <div class="payment-body">
+                <div class="form-group">
+                    <label for="money-tendered-repair">Deposit Amount (R)</label>
+                    <div class="input-group">
+                        <i class="fas fa-rand"></i>
+                        <input type="number" 
+                               id="money-tendered-repair" 
+                               name="money-tendered" 
+                               min="10" 
+                               step="0.01" 
+                               placeholder="Enter amount (min R10.00)"
+                               required>
+                    </div>
+                </div>
+
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>100% Secure</div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <div>Instant Credit</div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-headset"></i>
+                        <div>24/7 Support</div>
+                    </div>
+                </div>
+
+                <button class="deposit-btn">
+                    <i class="fas fa-wallet"></i> Deposit Now
+                </button>
+
+                <p style="text-align: center; margin-top: 1.5rem; color: #666; font-size: 0.9rem;">
+                    Minimum deposit: R10.00<br>
+                    Your balance will be updated instantly!
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Vhashumi Internet Café. All rights reserved.</p>
+        <p>
+            Email: <a href="mailto:info@vhashumicafe.com">info@vhashumicafe.com</a> | 
+            Phone: +27 81 734 2721 | 
+            <a href="https://wa.me/27817342721" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+            © St10476467 Lwazi Mkhonto 
+        </p>
+    </footer>
+	<script src="Javascript/Js.js"></script>
+   
+
+    
+</body>
+</html>

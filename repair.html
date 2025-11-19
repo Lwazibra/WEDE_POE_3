@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head> 
+<link rel="stylesheet" href="CSS/MyCss.css">
+
+<title> Vhashumi Internet cafe </title></head>
+ 
+ <body style= "background-color: #EFEBE9">
+ <header>
+ <nav>
+ <div align = "center">
+ <img src = "images/a.jpg" style = "width:170px; height:70;">
+ </div>
+ <div> 
+ <ul>
+   <li><a href = "index.html">Vhashumi Cafe</a></li>
+   <li><a href = "print.html">Print</a></li>
+   <li><a href="printt.html">Print t-shirt</a></li>
+   <li><a href = "repair.html">Repairs</a></li>
+   <li><a href = "Order page.html">Order page</a></li>
+   <li><a href = "contact us.html">Contact us</a></li>
+      <li><a href = "About us.html">About us</a></li>
+   </ul>
+   </div>
+     <div class="search-container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." id="searchInput">
+            <button type="submit" onclick="performSearch()">
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+	
+	
+
+
+
+
+
+
+
+<div class="container">
+        <div class="section repair-services" id="repair-services">
+            <h2>Repair & Software Services</h2>
+            <p class="instructions">Submit your laptop or cellphone for repair or software updates. Estimated cost updates as you select options.</p>
+            <form id="repair-form" aria-label="Repair Form" novalidate>
+                <div class="form-group">
+                    <label for="device-type">Device Type:</label>
+                    <select id="device-type" name="device-type" required>
+                        <option value="">Select Type</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="cellphone">Cellphone</option>
+                    </select>
+                    <span class="error-message">Please select a device type</span>
+                </div>
+                <div class="form-group">
+                    <label for="service-type">Service Type:</label>
+                    <select id="service-type" name="service-type" required>
+                        <option value="">Select Service</option>
+                        <option value="hardware-repair">Hardware Repair</option>
+                        <option value="software-update">Software Update</option>
+                        <option value="diagnostic">Diagnostic</option>
+                    </select>
+                    <span class="error-message">Please select a service type</span>
+                </div>
+                <div class="form-group">
+                    <label for="issue-type">Issue Type:</label>
+                    <select id="issue-type" name="issue-type" required>
+                        <option value="">Select Issue</option>
+                        <option value="screen">Screen Damage</option>
+                        <option value="battery">Battery Issues</option>
+                        <option value="performance">Performance Issues</option>
+                        <option value="software">Software Errors</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <span class="error-message">Please select an issue type</span>
+                </div>
+                <div class="form-group full-width">
+                    <label for="issue-description">Issue Description:</label>
+                    <textarea id="issue-description" name="issue-description" required></textarea>
+                    <span class="error-message">Please describe the issue</span>
+                </div>
+                <div class="form-group full-width">
+                    <label for="device-photo">Upload Photo (optional):</label>
+                    <input type="file" id="device-photo" name="device-photo" accept=".jpg,.png">
+                    <div class="progress-bar"><div></div></div>
+                </div>
+                
+                 <button type="submit1" onclick="window.location.href='payment.html'">submit</button>
+            <div class="loading-spinner"></div>
+            </form>
+            <div class="preview">
+                <h3>Request Preview</h3>
+                <p class="cost-estimate">Estimated Cost: R0.00</p>
+                <p>[Preview here]</p>
+                <div class="details" id="repair-details"></div>
+            </div>
+            </div>
+			
+			    <footer>
+        <p>© 2025 Vhashumi Internet Café.</p>
+        <p>
+            Email: <a href="mailto:info@vhashumicafe.com">info@vhashumicafe.com</a> | 
+            Phone: +27 81 734 2721 | 
+            <a href="https://wa.me/27817342721" target="_blank">WhatsApp Us</a>
+        </p>
+        <p>© St10476467 Lwazi Mkhonto</p>
+          </footer>
+	<script src="Javascript/Js.js"></script>
+	</html>
+	
+	
+	

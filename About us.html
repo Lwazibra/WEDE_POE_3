@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+
+
+
+
+<head> 
+<link rel="stylesheet" href="CSS/MyCss.css">
+
+<title>(About Us) Vhashumi Internet cafe </title></head>
+ 
+ <body style = "background-color: #EFEBE9">
+ <header>
+ <nav>
+ <div align = "left">
+ <img src = "images/a.jpg" style = "width:170px; height:70;"
+ </div>
+   <div class="search-container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." id="searchInput">
+            <button type="submit" onclick="performSearch()">
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+ 
+ <div> 
+ <ul>
+   <li><a href = "index.html">Vhashumi Cafe</a></li>
+   <li><a href = "print.html">Print</a></li>
+   <li><a href="printt.html">Print t-shirt</a></li>
+   <li><a href = "repair.html">Repairs</a></li>
+   <li><a href = "Order page.html">Order page</a></li>
+   
+   <li><a href = "contact us.html">Contact us</a></li>
+      <li><a href = "About us.html">About us</a></li>
+   </ul>
+   </div>
+   </nav>
+   </header>
+   
+   <main>
+   <h1>About us</h1>
+   <p>We are a printing company providing printing services to customers and businesses alike. We are based in Soweto.</p>
+   
+   <h2>Foundations</h2>
+    <h2>CEO</h2>
+	<div align = "left">
+ <img src = "images/a.jpg" style = "width:170px; height:70;"
+ </div>
+	
+	 <h2>Business hours</h2>
+
+ 
+	  <div class="gallery">
+    <img src="images/f.jpg" alt="Image 1">
+    <img src="images/e.jpeg" alt="Image 2" >
+	<img src="images/g.jpg" alt="Image 1">
+    <img src="images/h.jpg" alt="Image 2">
+  
+  <img src="images/i.jpeg" alt="Image 1">
+    <img src="images/j.webp" alt="Image 2">
+  
+  </div>
+
+<div class="lightbox" id="lightbox">
+    <span class="close" id="close">&times;</span>
+    <div class="nav prev" id="prev">&#10094;</div>
+    <img id="lightbox-img" src="" alt="">
+    <div class="caption" id="caption"></div>
+    <div class="nav next" id="next">&#10095;</div>
+  </div>
+
+<script src="Javascript/Js.js"></script>
+ <script>
+    const galleryItems = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const caption = document.getElementById('caption');
+    const closeBtn = document.getElementById('close');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+
+    let currentIndex = 0;
+
+    // Open lightbox
+    function openLightbox(index) {
+      currentIndex = index;
+      const img = galleryItems[index];
+      lightboxImg.src = img.src;
+      caption.textContent = img.getAttribute('data-caption') || img.alt;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scroll
+    }
+
+    // Close lightbox
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Navigate
+    function showImage(index) {
+      const img = galleryItems[index];
+      lightboxImg.src = img.src;
+      caption.textContent = img.getAttribute('data-caption') || img.alt;
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      showImage(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      showImage(currentIndex);
+    }
+
+    // Event Listeners
+    galleryItems.forEach((img, index) => {
+      img.addEventListener('click', () => openLightbox(index));
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    nextBtn.addEventListener('click', nextImage);
+    prevBtn.addEventListener('click', prevImage);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+
+
+
+
+   </main>
+    <footer>
+        <p>© 2025 Vhashumi Internet Café.</p>
+        <p>
+            Email: <a href="mailto:info@vhashumicafe.com">info@vhashumicafe.com</a> | 
+            Phone: +27 81 734 2721 | 
+            <a href="https://wa.me/27817342721" target="_blank">WhatsApp Us</a>
+        </p>
+        <p>© St10476467 Lwazi Mkhonto</p>
+          </footer>
+   </footer>
+   </body>
+   </html>

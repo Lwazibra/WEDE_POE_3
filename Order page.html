@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head> 
+<link rel="stylesheet" href="CSS/MyCss.css">
+
+<title> Vhashumi Internet cafe </title></head>
+ 
+ <body style= "background-color: #EFEBE9">
+ <header>
+ <nav>
+ <div align = "center">
+ <img src = "images/a.jpg" style = "width:170px; height:70;">
+ </div>
+ <div> 
+ <ul>
+   <li><a href = "index.html">Vhashumi Cafe</a></li>
+   <li><a href = "print.html">Print</a></li>
+   <li><a href="printt.html">Print t-shirt</a></li>
+   <li><a href = "repair.html">Repairs</a></li>
+   <li><a href = "Order page.html">Order page</a></li>
+   <li><a href = "contact us.html">Contact us</a></li>
+      <li><a href = "About us.html">About us</a></li>
+   </ul>
+   </div>
+     <div class="search-container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." id="searchInput">
+            <button type="submit" onclick="performSearch()">
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+ 
+   </nav>
+<div class="section" id="data-display">
+            <h2>Order History</h2>
+            <p class="instructions">View all orders placed through the app in ascending order of submission.</p>
+            <div class="data-display">
+                <h3>Submitted Orders</h3>
+                <pre id="order-history">No orders submitted yet.</pre>
+                <button onclick="clearOrderHistory()" aria-label="Clear order history">Clear Order History</button>
+            </div>
+            <div class="back-to-top"><a href="#top">Back to Top</a></div>
+        </div>
+		    <footer>
+        <p>© 2025 Vhashumi Internet Café.</p>
+        <p>
+            Email: <a href="mailto:info@vhashumicafe.com">info@vhashumicafe.com</a> | 
+            Phone: +27 81 734 2721 | 
+            <a href="https://wa.me/27817342721" target="_blank">WhatsApp Us</a>
+        </p>
+        <p>© St10476467 Lwazi Mkhonto</p>
+          </footer>
+		  <script src="Javascript/Js.js"></script>
+   </html>
